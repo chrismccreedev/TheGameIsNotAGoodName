@@ -12,12 +12,13 @@ public class CameraRotation : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         _oldPosition = transform.position;
     }
     private void Update()
     {
         _newPosition = Input.mousePosition;
-        Rotate(_newPosition - _oldPosition);
+        Rotate(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
         _oldPosition = _newPosition;
     }
 }

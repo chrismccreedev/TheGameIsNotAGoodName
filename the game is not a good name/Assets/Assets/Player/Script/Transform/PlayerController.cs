@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CameraRotation _cameraRotation;
     [SerializeField] private float _speed;
 
+    [SerializeField] private float _minRotCam;
+    [SerializeField] private float _maxRotCam;
+
     private CharacterController _characterController;
     private float _rotationValue;
 
@@ -26,12 +29,11 @@ public class PlayerController : MonoBehaviour
         Vector3 move = transform.forward * forwardValue + transform.right * sideValue;
         Vector3 rotar = _camera.transform.eulerAngles;
         transform.eulerAngles = rotar;
-        //_camera.transform.eulerAngles = rotar;
         _characterController.Move(move * 0.03f * _speed);
     }
 
     private void CameraRotate(Vector2 vector2)
     {
-        _camera.transform.eulerAngles += new Vector3(0, vector2.x * 0.1f, 0);
+        _camera.transform.eulerAngles += new Vector3(0, vector2.x * 0.5f, 0);
     }    
 }
