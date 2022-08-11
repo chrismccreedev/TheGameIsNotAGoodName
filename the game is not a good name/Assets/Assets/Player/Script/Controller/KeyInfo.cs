@@ -9,4 +9,5 @@ public class KeyInfo : ScriptableObject
     public KeyCode _keyBackward;
     public KeyCode _keyRight;
     public KeyCode _keyLeft;
+    public KeyCode _keyApply;
 }

@@ -7,7 +7,7 @@ public class SistemController : MonoBehaviour
 {
     [SerializeField] private SistemInfo _info;
     [SerializeField] private Menu _pauseMenu;
-    [SerializeField] private Menu _inventoryMenu;
+    //[SerializeField] private Menu _inventoryMenu;
 
     private bool _pauseValue = false;
     private bool _inventoryValue = false;
@@ -18,10 +18,12 @@ public class SistemController : MonoBehaviour
         {
             _pauseValue = OpenOrCloseMenu(_pauseMenu, _pauseValue);
         }
+        /*
         if(Input.GetKeyDown(_info._inventory))
         {
             _inventoryValue = OpenOrCloseMenu(_inventoryMenu, _inventoryValue);
         }
+        */
     }
 
     public bool OpenOrCloseMenu(Menu menu, bool value)

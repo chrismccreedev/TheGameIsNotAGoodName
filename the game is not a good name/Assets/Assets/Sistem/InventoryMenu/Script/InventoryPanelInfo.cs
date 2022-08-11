@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-[CreateAssetMenu(fileName = "InventoryPanelInfo", menuName = "InventoryPanelInfo")]
+[CreateAssetMenu(fileName = "InventoryPanelInfo", menuName = "Inventory/InventoryPanelInfo")]
 public class InventoryPanelInfo : ScriptableObject
 {
     [SerializeField, ReadOnly] private List<InventoryInfo> _inventorysInfo;
@@ -11,6 +11,11 @@ public class InventoryPanelInfo : ScriptableObject
     [SerializeField] private int _numPanel;
 
     private int _minNumPanel = 12;
+
+    public void  AddList(InventoryInfo info)
+    {
+        _inventorysInfo.Add(info);
+    }
 
     public GameObject PrefabPanel
     {
@@ -31,5 +36,11 @@ public class InventoryPanelInfo : ScriptableObject
                 Debug.Log("Не коректный ввод");
             }
         }
+    }
+
+    [Button]
+    private void ClearList()
+    {
+        _inventorysInfo.Clear();
     }
 }

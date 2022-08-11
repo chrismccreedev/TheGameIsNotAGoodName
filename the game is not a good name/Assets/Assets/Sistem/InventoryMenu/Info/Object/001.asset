@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed12ddfd0b442da4692c5cf479de39d2, type: 3}
-  m_Name: KeyInfo
+  m_Script: {fileID: 11500000, guid: 79d0a67ac9d90a544bd594a8c27e08fc, type: 3}
+  m_Name: 001
   m_EditorClassIdentifier: 
-  _keyForward: 119
-  _keyBackward: 115
-  _keyRight: 100
-  _keyLeft: 97
-  _keyApply: 101
+  _num: 0
+  _name: 001
+  _objectIcon: {fileID: 0}
+  _prefab: {fileID: 3795382783847011568, guid: eefd2bc1126509247bba9f4ea666f553, type: 3}
+  _numPanelX: 1
+  _numPanelY: 1
+  _maxStack: 1
