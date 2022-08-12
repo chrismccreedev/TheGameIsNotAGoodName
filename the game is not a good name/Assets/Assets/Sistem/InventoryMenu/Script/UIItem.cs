@@ -11,6 +11,8 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     private RectTransform _rectTransform;
     private Transform _oldParents;
 
+    private UISlot _slot = null;
+
     private void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
@@ -20,7 +22,9 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _oldParents = GetComponentInParent<UISlot>().transform;
+        _slot = GetComponentInParent<UISlot>();
+        _slot.Activ = false;
+        _oldParents = _slot.transform;
         transform.SetParent(_canvas.transform);
         _canvasGroup.blocksRaycasts = false;
     }
@@ -33,7 +37,10 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     public void OnEndDrag(PointerEventData eventData)
     {
         if(!transform.parent.GetComponent<UISlot>())
+        {
             transform.SetParent(_oldParents);
+            _slot.Activ = true;
+        }
         
         transform.localPosition = Vector3.zero;
         _canvasGroup.blocksRaycasts = true;

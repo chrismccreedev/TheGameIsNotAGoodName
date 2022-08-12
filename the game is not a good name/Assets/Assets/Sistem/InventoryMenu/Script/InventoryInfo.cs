@@ -15,7 +15,21 @@ public class InventoryInfo : ScriptableObject
     [SerializeField] private int _numPanelY;
     [SerializeField] private int _maxStack;
 
-    public int Num => _num;
+    public int Num
+    {
+        get { return _num; }
+        set 
+        {
+            if(value < 0)
+            {
+                _num = 0;
+            }
+            else
+            {
+                _num = value;
+            }
+        }
+    }
     public string Name => _name;
     public Image ObjectIcon => _objectIcon;
     public GameObject Prefab => _prefab;

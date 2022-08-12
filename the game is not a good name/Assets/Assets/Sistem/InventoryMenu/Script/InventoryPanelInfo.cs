@@ -10,6 +10,8 @@ public class InventoryPanelInfo : ScriptableObject
     [SerializeField] private GameObject _prefabPanel;
     [SerializeField] private int _numPanel;
 
+    public List<InventoryInfo> InventorysInfo => _inventorysInfo;
+
     private int _minNumPanel = 12;
 
     public void  AddList(InventoryInfo info)

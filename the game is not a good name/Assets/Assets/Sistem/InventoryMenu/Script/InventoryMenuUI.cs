@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public class PauseMenuUI : MonoBehaviour
+public class InventoryMenuUI : MonoBehaviour
 {
     private Canvas _canvas;
 

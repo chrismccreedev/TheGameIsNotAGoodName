@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public class PauseMenuUI : MonoBehaviour
+public class BootyUI : MonoBehaviour
 {
     private Canvas _canvas;
 
@@ -12,11 +11,12 @@ public class PauseMenuUI : MonoBehaviour
         _canvas = GetComponent<Canvas>();
         _canvas.enabled = false;
     }
-    public void OpenPause()
+
+    public void Open()
     {
         _canvas.enabled = true;
     }
-    public void ClosePause()
+    public void Close()
     {
         _canvas.enabled = false;
     }
