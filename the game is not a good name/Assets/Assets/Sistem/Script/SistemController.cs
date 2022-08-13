@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 using System;
 
 public class SistemController : MonoBehaviour
@@ -14,7 +15,8 @@ public class SistemController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(_info._pause))
+
+        if (Input.GetKeyDown(_info._pause))
         {
             _pauseValue = OpenOrCloseMenu(_pauseMenu, _pauseValue);
         }
@@ -28,11 +30,12 @@ public class SistemController : MonoBehaviour
     {
         if (!value)
         {
+            menu.enabled = true;
             menu.Open();
             Cursor.lockState = CursorLockMode.None;
         }
         else
-        {
+        { 
             menu.Close();
             Cursor.lockState = CursorLockMode.Locked;
         }
