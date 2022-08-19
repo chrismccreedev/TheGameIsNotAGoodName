@@ -1,39 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
 [CreateAssetMenu(fileName = "InventoryInfo", menuName = "Inventory/InventoryInfo")]
 public class InventoryInfo : ScriptableObject
 {
-    [SerializeField, ReadOnly] private int _num;
-    [SerializeField] private string _name;
-    [SerializeField] private Image _objectIcon;
-    [SerializeField] private GameObject _prefab;
-    [SerializeField] private int _numPanelX;
-    [SerializeField] private int _numPanelY;
-    [SerializeField] private int _maxStack;
+    [SerializeField] private GameObject _prefabPanel;
+    [SerializeField] private int _numPanel;
 
-    public int Num
+    private int _minNumPanel = 12;
+
+    public GameObject PrefabPanel => _prefabPanel;
+    public int NumPanel
     {
-        get { return _num; }
-        set 
+        get { return _numPanel; }
+        set
         {
-            if(value < 0)
+            if(value > 0)
             {
-                _num = 0;
+                _numPanel = value;
             }
             else
             {
-                _num = value;
+                _numPanel = _minNumPanel;
+                Debug.Log("Не коректный ввод");
             }
         }
     }
-    public string Name => _name;
-    public Image ObjectIcon => _objectIcon;
-    public GameObject Prefab => _prefab;
-    public int NumPanelX => _numPanelX;
-    public int NumPanelY => _numPanelY;
-    public int MaxStack => _maxStack;
 }

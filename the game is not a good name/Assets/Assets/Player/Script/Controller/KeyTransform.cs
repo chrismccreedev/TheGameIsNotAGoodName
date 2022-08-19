@@ -8,9 +8,12 @@ public class KeyTransform : MonoBehaviour
     [SerializeField] private KeyInfo _keyInfo;
 
     public event Action<int, int> KeyDown;
+    public event Action Gravity;
 
     private void FixedUpdate()
     {
+        Gravity();
+
         if(Input.GetKey(_keyInfo._keyForward))
         {
             KeyDown(1, 0);

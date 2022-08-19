@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d0a67ac9d90a544bd594a8c27e08fc, type: 3}
   m_Name: 001
   m_EditorClassIdentifier: 
-  _num: 0
   _name: 001
+  _object: {fileID: 0}
   _objectIcon: {fileID: 0}
   _prefab: {fileID: 3795382783847011568, guid: eefd2bc1126509247bba9f4ea666f553, type: 3}
   _numPanelX: 1
   _numPanelY: 1
-  _maxStack: 1
+  _maxAmount: 16

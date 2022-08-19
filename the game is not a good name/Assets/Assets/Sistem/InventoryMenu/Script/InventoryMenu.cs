@@ -1,20 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryMenu : Menu
 {
-    private KeyTransform _key;
-    private CameraRotation _rotation;
     private InventoryMenuUI _menuUI;
-
-    private void Start()
+    protected override void Start()
     {
-        _key = FindObjectOfType<KeyTransform>();
-        _rotation = FindObjectOfType<CameraRotation>();
+        base.Start();
         _menuUI = GetComponent<InventoryMenuUI>();
     }
-
     public override void Open()
     {
         _key.enabled = false;
@@ -27,5 +20,9 @@ public class InventoryMenu : Menu
         _key.enabled = true;
         _rotation.enabled = true;
         _menuUI.ClosePause();
+    }
+    public override KeyCode Key()
+    {
+        return _info._inventory;
     }
 }
