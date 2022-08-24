@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 
 public class BeaconBooty : MonoBehaviour
 {
-    [SerializeField] private ItemInfo _info;
+    [SerializeField] private DefaultItemInfo _info;
     [SerializeField] private bool _enfinityItem;
     [SerializeField] private bool _randomAmount;
     [ShowIf("_randomAmount")]
@@ -15,8 +15,8 @@ public class BeaconBooty : MonoBehaviour
     [HideIf("_randomAmount")]
     [SerializeField] private int _startAmount;
 
-    private int _amount;
-    public ItemInfo Info => _info;
+    [SerializeField, ReadOnly]private int _amount;
+    public DefaultItemInfo Info => _info;
 
     public int Amount
     {

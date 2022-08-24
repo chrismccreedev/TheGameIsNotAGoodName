@@ -4,27 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
-[CreateAssetMenu(fileName = "newDefaultItem", menuName = "Inventory/ItemInfo/Default")]
-public class ItemInfo : ScriptableObject
+[CreateAssetMenu(fileName = "newDefaultItem", menuName = "InventoryManager/ItemInfo/Default")]
+public class DefaultItemInfo : ScriptableObject
 {
-    [BoxGroup("Inventory UI")]
+    [BoxGroup("InventoryManager UI")]
     [SerializeField] private string _name;
     [BoxGroup("Game Object")]
     [SerializeField] private GameObject _object;
-    [BoxGroup("Inventory UI")]
-    [SerializeField] private Image _objectIcon;
-    [BoxGroup("Inventory UI")]
+    [BoxGroup("InventoryManager UI")]
+    [SerializeField] private Sprite _objectIcon;
+    [BoxGroup("InventoryManager UI")]
     [SerializeField] private GameObject _prefab;
-    [BoxGroup("Inventory UI")]
+    [BoxGroup("InventoryManager UI")]
     [SerializeField] private int _numPanelX;
-    [BoxGroup("Inventory UI")]
+    [BoxGroup("InventoryManager UI")]
     [SerializeField] private int _numPanelY;
-    [BoxGroup("Inventory UI")]
+    [BoxGroup("InventoryManager UI")]
     [SerializeField] private int _maxAmount;
 
     public string Name => _name;
     public GameObject Object => _object;
-    public Image ObjectIcon => _objectIcon;
+    public Sprite ObjectIcon => _objectIcon;
     public GameObject Prefab => _prefab;
     public int NumPanelX => _numPanelX;
     public int NumPanelY => _numPanelY;

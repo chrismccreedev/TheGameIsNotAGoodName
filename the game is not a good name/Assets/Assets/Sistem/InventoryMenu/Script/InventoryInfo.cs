@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-[CreateAssetMenu(fileName = "InventoryInfo", menuName = "Inventory/InventoryInfo")]
+[CreateAssetMenu(fileName = "InventoryInfo", menuName = "InventoryManager/InventoryInfo")]
 public class InventoryInfo : ScriptableObject
 {
     [SerializeField] private GameObject _prefabPanel;

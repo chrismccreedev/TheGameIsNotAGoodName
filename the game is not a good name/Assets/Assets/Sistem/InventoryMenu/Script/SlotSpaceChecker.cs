@@ -1,12 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SlotSpaceChecker : MonoBehaviour
 {
-    [SerializeField] private UISlot[] _listPrefab;
+    [SerializeField] private Inventory.SlotDrop[] _listPrefab;
 
-    public int FreeSpaceCheck(ItemInfo info)
+    private void Start()
+    {
+        Inventory.SlotDrop[] list = FindObjectsOfType<Inventory.SlotDrop>();
+        _listPrefab = new Inventory.SlotDrop[list.Length];
+        for(int i = 0; i < list.Length; i++)
+        {
+            _listPrefab[i] = list[(list.Length - 1) - i];
+        }
+    }
+    public int FreeSpaceCheck(DefaultItemInfo info)
     {
         CreateNewMass();
 
@@ -39,7 +46,7 @@ public class SlotSpaceChecker : MonoBehaviour
         return -1;
     }
 
-    public bool FreeSpaceCheck(ItemInfo info, UISlot uISlot)
+    public bool FreeSpaceCheck(DefaultItemInfo info, Inventory.SlotDrop uISlot)
     {
         int num = 0;
         for (int i = 0; i < _listPrefab.Length; i++)
@@ -63,7 +70,7 @@ public class SlotSpaceChecker : MonoBehaviour
                 {
                     return false;
                 }
-                if (_listPrefab[num + x + (y * 6)].GetComponent<UISlot>().Activ == true)
+                if (_listPrefab[num + x + (y * 6)].GetComponent<Inventory.SlotDrop>().Activ == true)
                 {
                     return false;
                 }
@@ -72,7 +79,7 @@ public class SlotSpaceChecker : MonoBehaviour
         Debug.Log(true);
         return true;
     }
-    public void Activate(ItemInfo info, UISlot uISlot)
+    public void Activate(DefaultItemInfo info, Inventory.SlotDrop uISlot)
     {
         int num = 0;
         for(int i = 0; i < _listPrefab.Length; i++)
@@ -88,11 +95,18 @@ public class SlotSpaceChecker : MonoBehaviour
         {
             for (int y = 0; y < info.NumPanelY; y++)
             {
-                _listPrefab[num + x + (y * 6)].GetComponent<UISlot>().Activ = true;
+                _listPrefab[num + x + (y * 6)].GetComponent<Inventory.SlotDrop>().Activ = true;
+                _listPrefab[num + x + (y * 6)].CanvasGroup.blocksRaycasts = false;
+                _listPrefab[num + x + (y * 6)].CanvasGroup.alpha = 0;
+                if (x == 0 && y == 0)
+                {
+                    _listPrefab[num + x + (y * 6)].CanvasGroup.blocksRaycasts = true;
+                    _listPrefab[num + x + (y * 6)].CanvasGroup.alpha = 1;
+                }
             }
         }
     }
-    public void Disable(ItemInfo info, UISlot uISlot)
+    public void Disable(DefaultItemInfo info, Inventory.SlotDrop uISlot)
     {
         int num = 0;
         for (int i = 0; i < _listPrefab.Length; i++)
@@ -108,16 +122,18 @@ public class SlotSpaceChecker : MonoBehaviour
         {
             for (int y = 0; y < info.NumPanelY; y++)
             {
-                _listPrefab[num + x + (y * 6)].GetComponent<UISlot>().Activ = false;
+                _listPrefab[num + x + (y * 6)].GetComponent<Inventory.SlotDrop>().Activ = false;
+                _listPrefab[num + x + (y * 6)].CanvasGroup.blocksRaycasts = true;
+                _listPrefab[num + x + (y * 6)].CanvasGroup.alpha = 1;
             }
         }
     }
 
-    public int CheckForAnItem(ItemInfo info)
+    public int CheckForAnItem(DefaultItemInfo info)
     {
         for(int i = 0; i < _listPrefab.Length; i++)
         {
-            if (_listPrefab[i].UIItem?.Item == info && _listPrefab[i].UIItem?.Amount < info.MaxAmount)
+            if (_listPrefab[i].Item?.ItemIn == info && _listPrefab[i].Item?.Amount < info.MaxAmount)
             {
                 return i;
             }
@@ -127,8 +143,8 @@ public class SlotSpaceChecker : MonoBehaviour
 
     private void  CreateNewMass()
     {
-        UISlot[] listPrefab = FindObjectsOfType<UISlot>();
-        _listPrefab = new UISlot[listPrefab.Length];
+        Inventory.SlotDrop[] listPrefab = FindObjectsOfType<Inventory.SlotDrop>();
+        _listPrefab = new Inventory.SlotDrop[listPrefab.Length];
 
         for(int i = 0; i < listPrefab.Length; i++)
         {

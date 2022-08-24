@@ -7,8 +7,8 @@ public class Booty : MonoBehaviour
     [SerializeField] private KeyInfo _keyInfo;
 
     private SlotSpaceChecker _slotSpaceChecker;
-    private ItemInfo _info = null;
-    private Inventory _inventory;
+    private DefaultItemInfo _info = null;
+    private Inventory.InventoryManager _inventory;
     private BootyUI _bootyUI;
     private bool _activ = false;
     private BeaconBooty _beaconBooty;
@@ -17,7 +17,7 @@ public class Booty : MonoBehaviour
     {
         _slotSpaceChecker = FindObjectOfType<SlotSpaceChecker>();
         _bootyUI = FindObjectOfType<BootyUI>();
-        _inventory = FindObjectOfType<Inventory>();
+        _inventory = FindObjectOfType<Inventory.InventoryManager>();
         _inventory.ReturnAmount += Amount;
     }
 
@@ -33,13 +33,23 @@ public class Booty : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        _info = null;
-        _activ = false;
-        _bootyUI.Close();
+        if (other.GetComponent<BeaconBooty>())
+        {
+            _beaconBooty = null;
+            _info = null;
+            _activ = false;
+            _bootyUI.Close();
+        }
     }
 
     private void Update()
     {
+        if(_beaconBooty == null)
+        {
+            _info = null;
+            _activ = false;
+            _bootyUI.Close();
+        }
         if(Input.GetKeyDown(_keyInfo._keyApply) && _activ)
         {
             Inventory();
