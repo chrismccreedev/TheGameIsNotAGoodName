@@ -16,3 +16,4 @@ MonoBehaviour:
   _keyBackward: 115
   _keyRight: 100
   _keyLeft: 97
+  _keyApply: 101

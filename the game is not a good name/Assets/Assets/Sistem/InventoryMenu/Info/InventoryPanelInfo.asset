@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f86ed02122f424886ddd05849e877c, type: 3}
   m_Name: InventoryPanelInfo
   m_EditorClassIdentifier: 
-  _inventorysInfo: []
   _prefabPanel: {fileID: 345851928350902406, guid: f52055a91acbd594b942a75779f99d1c,
     type: 3}
   _numPanel: 12
