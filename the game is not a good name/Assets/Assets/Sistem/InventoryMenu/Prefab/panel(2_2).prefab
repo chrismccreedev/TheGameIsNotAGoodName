@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 5076353438817148848}
   _image: {fileID: 700961996111548639}
+  _rectTransform: {fileID: 6208114055288502244}
 --- !u!114 &4099540252841194089
 MonoBehaviour:
   m_ObjectHideFlags: 0

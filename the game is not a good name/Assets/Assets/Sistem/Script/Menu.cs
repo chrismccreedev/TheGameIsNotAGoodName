@@ -6,12 +6,10 @@ public abstract class Menu : MonoBehaviour
 {
     [SerializeField] protected SistemInfo _info;
 
-    protected KeyTransform _key;
     protected CameraRotation _rotation;
 
     protected virtual void Start()
     {
-        _key = FindObjectOfType<KeyTransform>();
         _rotation = FindObjectOfType<CameraRotation>();
     }
 

@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BootyUI : MonoBehaviour
 {
-    private Canvas _canvas;
+    [SerializeField] private float _shift;
+    [SerializeField] private float _time;
 
+    private float _startPosition;
+    private float _endPosition;
     private void Start()
     {
-        _canvas = GetComponent<Canvas>();
-        _canvas.enabled = false;
+        _endPosition = transform.localPosition.x;
+        _startPosition = transform.localPosition.x + _shift;
+        transform.DOLocalMoveX(_startPosition, 0);
     }
 
     public void Open()
     {
-        _canvas.enabled = true;
+        transform.DOLocalMoveX(_endPosition, _time);
     }
     public void Close()
     {
-        _canvas.enabled = false;
+        transform.DOLocalMoveX(_startPosition, _time);
     }
 }

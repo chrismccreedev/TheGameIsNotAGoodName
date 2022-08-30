@@ -10,14 +10,12 @@ public class InventoryMenu : Menu
     }
     public override void Open()
     {
-        _key.enabled = false;
         _rotation.enabled = false;
         _menuUI.OpenPause();
     }
 
     public override void Close()
     {
-        _key.enabled = true;
         _rotation.enabled = true;
         _menuUI.ClosePause();
     }

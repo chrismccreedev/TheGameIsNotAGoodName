@@ -35,7 +35,10 @@ namespace Inventory
             _slotSpaceChecker = GetComponentInParent<SlotSpaceChecker>();
             _slotSpaceChecker.Activate(_item.ItemIn, _slot);
 
+            _itemUI.X = _item.ItemIn.NumPanelX;
+            _itemUI.Y = _item.ItemIn.NumPanelY;
             _itemUI.ItemImaje(_item);
+
         }
 
         public void OnBeginDrag(PointerEventData eventData)

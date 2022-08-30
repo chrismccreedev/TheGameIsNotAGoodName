@@ -67,16 +67,16 @@ public class InventoryMenuUI : MonoBehaviour
     {
         _canvas.enabled = true;
         _imagePanelBackground.DOFade(_alfaBackground, _timeFaidBackground);
-        yield return new WaitForSeconds(_timeFaidBackground);
         _leftPanel.transform.DOLocalMoveY(_finishPosLeftPanel, _timePanel);
         _rightPanel.transform.DOLocalMoveY(_finishPosRightPanel, _timePanel);
+
+        yield return new WaitForSeconds(0);
     }
 
     private IEnumerator CRClosePause()
     {
         _rightPanel.transform.DOLocalMoveY(_startPosRightPanel, _timePanel);
         _leftPanel.transform.DOLocalMoveY(_startPosLeftPanel, _timePanel);
-        yield return new WaitForSeconds(_timePanel);
         _imagePanelBackground.DOFade(0, _timeFaidBackground);
         yield return new WaitForSeconds(_timeFaidBackground);
         _canvas.enabled = false;

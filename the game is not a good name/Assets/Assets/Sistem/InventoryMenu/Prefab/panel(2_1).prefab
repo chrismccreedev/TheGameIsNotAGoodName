@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 9008417804628482568}
   _image: {fileID: 8249673118784086042}
+  _rectTransform: {fileID: 8356183462608826606}
 --- !u!114 &-482127201752839327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,9 +421,9 @@ RectTransform:
   m_Father: {fileID: 5285134423091127966}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -87.5}
   m_SizeDelta: {x: 360, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4231872233437803190
