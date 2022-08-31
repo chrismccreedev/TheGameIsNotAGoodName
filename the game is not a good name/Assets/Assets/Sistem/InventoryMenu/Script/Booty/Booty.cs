@@ -50,12 +50,8 @@ public class Booty : MonoBehaviour
             _activ = false;
             _bootyUI.Close();
         }
-        if(Input.GetKeyDown(_keyInfo._keyApply) && _activ)
-        {
-            Inventory();
-        }
     }
-    private void Inventory()
+    public void Inventory()
     {
         int value = _slotSpaceChecker.CheckForAnItem(_info);
         if (value >= 0)
