@@ -43,7 +43,7 @@ namespace PlayerTransform
         private void Move(Vector2 vector)
         {
             Vector3 move = (transform.forward * vector.y + transform.right * vector.x);
-            Vector3 rotar = _camera.transform.eulerAngles;
+            Vector3 rotar = new Vector3(0, _camera.transform.eulerAngles.y, 0);
             transform.eulerAngles = rotar;
             _characterController.Move(move * Time.deltaTime * _speed);
         }

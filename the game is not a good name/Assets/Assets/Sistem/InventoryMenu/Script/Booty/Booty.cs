@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Booty : MonoBehaviour
 {
-    [SerializeField] private KeyInfo _keyInfo;
-
     private SlotSpaceChecker _slotSpaceChecker;
     private DefaultItemInfo _info = null;
     private Inventory.InventoryManager _inventory;

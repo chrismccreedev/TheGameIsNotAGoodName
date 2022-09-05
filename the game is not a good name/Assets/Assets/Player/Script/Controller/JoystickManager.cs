@@ -12,6 +12,7 @@ namespace PlayerTransform
         [SerializeField] private GameObject _joystick;
 
         private float _radius;
+        private bool _triggerMove = false;
         private Canvas _canvas;
         private Vector2 _startPositionJoystickFon;
         private Vector2 _startPositionJoystick;
@@ -29,7 +30,10 @@ namespace PlayerTransform
         }
         private void FixedUpdate()
         {
-            Move(_joystick.transform.localPosition/_radius);
+            if (_triggerMove)
+            {
+                Move(_joystick.transform.localPosition / _radius);
+            }
             Gravity();
         }
 
@@ -45,11 +49,13 @@ namespace PlayerTransform
 
         public void OnDrag(PointerEventData eventData)
         {
+            _triggerMove = true;
             _joystick.transform.localPosition = JoystickMath(eventData.position) / _canvas.scaleFactor;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            _triggerMove = false;
             _joystick.transform.localPosition = _startPositionJoystick;
         }
 
