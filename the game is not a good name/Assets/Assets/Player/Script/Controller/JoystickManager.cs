@@ -11,6 +11,8 @@ namespace PlayerTransform
         [SerializeField] private GameObject _joystickFon;
         [SerializeField] private GameObject _joystick;
 
+        private PlayerAnumatorController _controller;
+
         private float _radius;
         private bool _triggerMove = false;
         private Canvas _canvas;
@@ -23,6 +25,7 @@ namespace PlayerTransform
         private void Start()
         {
             _radius = ((_joystickFon.GetComponent<RectTransform>().rect.width/2f)/22f)*18.5f;
+            _controller = FindObjectOfType<PlayerAnumatorController>();
             Debug.Log(_radius);
             _startPositionJoystickFon = _joystickFon.transform.localPosition;
             _startPositionJoystick = _joystick.transform.localPosition;
@@ -39,12 +42,14 @@ namespace PlayerTransform
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            _controller.StartMove();
             _joystickFon.transform.position = eventData.position;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             _joystickFon.transform.localPosition = _startPositionJoystickFon;
+            _controller.EndMove();
         }
 
         public void OnDrag(PointerEventData eventData)
