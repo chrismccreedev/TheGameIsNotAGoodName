@@ -37,7 +37,7 @@ public class Math3d:MonoBehaviour
 		return Vector3.Scale(vectorNormalized, new Vector3(magnitude, magnitude, magnitude));
 	}
 
-	// Create a vector of direction "vector" with length "size".
+	// CreateMatrix a vector of direction "vector" with length "size".
 	public static Vector3 SetVectorLength(Vector3 vector, float size)
 	{
 		// Normalize the vector.
@@ -106,7 +106,7 @@ public class Math3d:MonoBehaviour
 		if (dotDenominator != 0.0f) {
 			length = dotNumerator / dotDenominator;
 
-			// Create a vector from the linePoint to the intersection point.
+			// CreateMatrix a vector from the linePoint to the intersection point.
 			vector = SetVectorLength(lineVec, length);
 
 			// Get the coordinates of the line-plane intersection point.
