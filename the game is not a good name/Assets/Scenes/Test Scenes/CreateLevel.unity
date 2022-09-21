@@ -154,6 +154,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &736749942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736749945}
+  - component: {fileID: 736749944}
+  - component: {fileID: 736749943}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &736749943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736749942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.834621, y: 1, z: 4.673865}
+  m_Center: {x: -1.014176, y: 0, z: 0.11420454}
+--- !u!54 &736749944
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736749942}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!4 &736749945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736749942}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.69, y: 0, z: 0}
+  m_LocalScale: {x: 0.83333325, y: 1, z: 0.83333325}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1626403332}
+  m_Father: {fileID: 1492560035}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165248161
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +335,69 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &1480759022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480759025}
+  - component: {fileID: 1480759024}
+  - component: {fileID: 1480759023}
+  m_Layer: 0
+  m_Name: Asphalt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1480759023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480759022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9196749, y: 1, z: 3.9346962}
+  m_Center: {x: 0.6556876, y: 0, z: 0.14531107}
+--- !u!54 &1480759024
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480759022}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!4 &1480759025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480759022}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.48, y: 0, z: 0}
+  m_LocalScale: {x: 0.83333325, y: 1, z: 0.83333325}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1977481918}
+  m_Father: {fileID: 1492560035}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492560030
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +495,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1, z: 1.2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 736749945}
+  - {fileID: 1480759025}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -876,13 +1004,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -894,13 +1022,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -912,13 +1040,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1074,13 +1202,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1092,13 +1220,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1110,13 +1238,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1272,13 +1400,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1290,13 +1418,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1308,13 +1436,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1470,13 +1598,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1488,13 +1616,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1506,13 +1634,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.6603774
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.3982992
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.208081141
     - Name: 
       Entry: 4
       Data: 1
@@ -1668,13 +1796,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -1686,13 +1814,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -1704,13 +1832,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -1866,13 +1994,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -1884,13 +2012,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -1902,13 +2030,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -2064,13 +2192,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -2082,13 +2210,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -2100,13 +2228,13 @@ MonoBehaviour:
       Data: UnityEngine.Color, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0.210782155
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.6226415
+      Data: 0.5283019
     - Name: 
       Entry: 4
-      Data: 0.207938731
+      Data: 0.5283019
     - Name: 
       Entry: 4
       Data: 1
@@ -2618,10 +2746,14 @@ MonoBehaviour:
   _parents: {fileID: 1492560035}
   _checkValues:
   - _platformType: 1
-    _check: []
+    _check:
+    - {fileID: 736749942}
   - _platformType: 2
+    _check:
+    - {fileID: 1480759022}
+  - _platformType: 3
     _check: []
-  _index: 0
+  _index: 2
 --- !u!114 &1492560038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2801,6 +2933,233 @@ MonoBehaviour:
       _leftDown: 2
       _down: 2
       _rightDown: 2
+    - _leftUp: 0
+      _up: 0
+      _rightUp: 0
+      _left: 0
+      _prefab: {fileID: 2208919102366223639, guid: 846c802accb8c1844a08cff7ed0d3072,
+        type: 3}
+      _right: 0
+      _leftDown: 0
+      _down: 0
+      _rightDown: 0
+    - _leftUp: 0
+      _up: 2
+      _rightUp: 0
+      _left: 0
+      _prefab: {fileID: 1880102661905557386, guid: f10931391fbe64b4286691a7ff07c80f,
+        type: 3}
+      _right: 2
+      _leftDown: 0
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 2
+      _up: 2
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 4812700386921579170, guid: 994ddcb95ad55ae48bfe89f8c4bc4c62,
+        type: 3}
+      _right: 2
+      _leftDown: 0
+      _down: 0
+      _rightDown: 0
+    - _leftUp: 2
+      _up: 2
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 5900691821242842457, guid: 650e3885a5ef0024fb9c79b7eb7a558e,
+        type: 3}
+      _right: 0
+      _leftDown: 0
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 0
+      _up: 2
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 8171710251870495978, guid: 0fe963131ddccff4a9fab79479c8dcac,
+        type: 3}
+      _right: 2
+      _leftDown: 0
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 0
+      _up: 2
+      _rightUp: 2
+      _left: 2
+      _prefab: {fileID: 6768388450093336064, guid: 9316942d65cb3e3409bd9330276e599b,
+        type: 3}
+      _right: 2
+      _leftDown: 0
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 2
+      _up: 2
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 3936272922981109111, guid: d95d2d15b8264e94faa2683b8f82359a,
+        type: 3}
+      _right: 2
+      _leftDown: 2
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 2
+      _up: 2
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 6775509423833351304, guid: a4e05e4ceea1b6841ad5b6d412d6cfc6,
+        type: 3}
+      _right: 2
+      _leftDown: 0
+      _down: 2
+      _rightDown: 2
+    - _leftUp: 0
+      _up: 0
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 5550541580215814351, guid: d047c7eaf4def104a90aa54f37582bdb,
+        type: 3}
+      _right: 2
+      _leftDown: 0
+      _down: 0
+      _rightDown: 0
+    - _leftUp: 2
+      _up: 2
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 7241873251668450428, guid: 33c5250607ca9354ea216f6553a4dd09,
+        type: 3}
+      _right: 0
+      _leftDown: 2
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 0
+      _up: 0
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 3783088741633022548, guid: 8794c77bc371cf743b6ba32580c42ae6,
+        type: 3}
+      _right: 0
+      _leftDown: 0
+      _down: 0
+      _rightDown: 0
+    - _leftUp: 0
+      _up: 2
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 2049538625055126691, guid: 9d4e37fac7abbfb4fa8feaaadef0a87e,
+        type: 3}
+      _right: 0
+      _leftDown: 0
+      _down: 0
+      _rightDown: 0
+    - _leftUp: 0
+      _up: 0
+      _rightUp: 0
+      _left: 2
+      _prefab: {fileID: 4129264315934146011, guid: eff8f5ffb564b53469742af0bbdf38e2,
+        type: 3}
+      _right: 0
+      _leftDown: 2
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 2
+      _up: 2
+      _rightUp: 2
+      _left: 2
+      _prefab: {fileID: 3717478225380109224, guid: a7ca3bcfa687136408b5c9b0f7b17b7f,
+        type: 3}
+      _right: 2
+      _leftDown: 2
+      _down: 2
+      _rightDown: 0
+  - _type: 3
+    _platform:
+    - _leftUp: 1
+      _up: 1
+      _rightUp: 1
+      _left: 3
+      _prefab: {fileID: 5098290060657193125, guid: 145b0a091313ccf4da69b8498e70a251,
+        type: 3}
+      _right: 3
+      _leftDown: 2
+      _down: 2
+      _rightDown: 2
+    - _leftUp: 0
+      _up: 1
+      _rightUp: 0
+      _left: 0
+      _prefab: {fileID: 4546532665975330553, guid: 07486c61da831834496b3a6f592bca63,
+        type: 3}
+      _right: 0
+      _leftDown: 0
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 1
+      _up: 1
+      _rightUp: 0
+      _left: 3
+      _prefab: {fileID: 831610296998164106, guid: 5fd635cfffbbc1649a10c68e1183d93c,
+        type: 3}
+      _right: 0
+      _leftDown: 2
+      _down: 2
+      _rightDown: 0
+    - _leftUp: 0
+      _up: 1
+      _rightUp: 1
+      _left: 0
+      _prefab: {fileID: 6080463497502319234, guid: b2cea7d84385c3741a784162898c79a3,
+        type: 3}
+      _right: 3
+      _leftDown: 0
+      _down: 2
+      _rightDown: 2
+--- !u!1 &1626403331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626403332}
+  - component: {fileID: 1626403333}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1626403332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626403331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 736749945}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1626403333
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626403331}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1827456920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,3 +3275,48 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1977481917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977481918}
+  - component: {fileID: 1977481919}
+  m_Layer: 0
+  m_Name: Asphalt
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1977481918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977481917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480759025}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1977481919
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977481917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}

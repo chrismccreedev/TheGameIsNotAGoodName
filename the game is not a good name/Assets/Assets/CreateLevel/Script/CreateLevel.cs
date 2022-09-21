@@ -92,7 +92,7 @@ namespace CreateLevel
                             {
                                 foreach(Info info in n.Platform)
                                 {
-                                    CheckPlatform(info.Platform, info.Prefab, obj.transform, i, j);
+                                    CheckPlatform(info.Platform, n, info.Prefab, obj.transform, i, j);
                                 }
                             }
                         }
@@ -100,7 +100,7 @@ namespace CreateLevel
                 }
             }
         }
-        private void CheckPlatform(PlatformType[,] matrix, GameObject obj, Transform parents, int x, int z)
+        private void CheckPlatform(PlatformType[,] matrix, GroupeInfo info, GameObject obj, Transform parents, int x, int z)
         {
             PlatformType[,] rot = matrix;
             for (int r = 0; r < 4; r++)
@@ -111,13 +111,31 @@ namespace CreateLevel
 
                 for(int i = 0; i < 4; i++)
                 {
-                    if(rot[(int)vector1.x, (int)vector1.y] != _platformType[x + ((int)vector1.x - 1), z + ((int)vector1.y - 1)])
+                    PlatformType test = _platformType[x + ((int)vector1.x - 1), z + ((int)vector1.y - 1)];
+                    if (test == PlatformType.Transition)
+                    {
+                        test = info.Type;
+                    }
+                    else if (test != PlatformType.Default && test != info.Type && info.Type != PlatformType.Transition)
+                    {
+                        test = PlatformType.Default;
+                    }
+
+
+                    if(rot[(int)vector1.x, (int)vector1.y] != test)
                     {
                         check = false;
                         break;
                     }
-                    if(rot[(int)vector1.x, (int)vector1.y] == rot[(int)vector1.y, 2 - (int)vector1.x] && rot[(int)vector1.x, (int)vector1.y] != PlatformType.Default && 
-                        rot[(int)vector2.x, (int)vector2.y] != _platformType[x + ((int)vector2.x - 1), z + ((int)vector2.y - 1)])
+
+                    test = _platformType[x + ((int)vector2.x - 1), z + ((int)vector2.y - 1)];
+                    if (test == PlatformType.Transition)
+                    {
+                        test = info.Type;
+                    }
+
+                    if (rot[(int)vector1.x, (int)vector1.y] == rot[(int)vector1.y, 2 - (int)vector1.x] && rot[(int)vector1.x, (int)vector1.y] != PlatformType.Default && 
+                        rot[(int)vector2.x, (int)vector2.y] != test)
                     {
                         check = false;
                         break;
@@ -125,10 +143,6 @@ namespace CreateLevel
                     vector1 = new Vector2(vector1.y, (2 - vector1.x));
                     vector2 = new Vector2(vector2.y, (2 - vector2.x));
                 }
-                /*
-                if (rot[0, 0] == _platformType[x - 1, z - 1] && rot[2, 2] == _platformType[x + 1, z + 1] &&
-                    rot[2, 0] == _platformType[x + 1, z - 1] && rot[0, 2] == _platformType[x - 1, z + 1])
-                */
                 if(check)
                 {
                     GameObject platform = Instantiate(obj);

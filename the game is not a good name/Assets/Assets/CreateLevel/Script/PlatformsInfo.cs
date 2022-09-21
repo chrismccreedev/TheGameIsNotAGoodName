@@ -38,7 +38,7 @@ namespace CreateLevel
         [HorizontalGroup("Info/Middle", LabelWidth = 20)]
         [SerializeField] private PlatformType _left;
         [HorizontalGroup("Info/Middle")]
-        [PreviewField(Height = 50)]
+        [PreviewField(Height = 80)]
         [SerializeField] private GameObject _prefab;
         [HorizontalGroup("Info/Middle")]
         [SerializeField] private PlatformType _right;
