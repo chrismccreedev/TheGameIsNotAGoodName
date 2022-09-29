@@ -52,7 +52,7 @@ namespace RPGCharacterAnims
 
 		private void Navigation()
         {
-			// Check to make sure Navigation Action exists.
+			// CheckVertical to make sure Navigation Action exists.
             if (!rpgCharacterController.HandlerExists(HandlerTypes.Navigation)) { return; }
 
             useNavigation = GUI.Toggle(new Rect(550, 105, 100, 30), useNavigation, "Navigation");
@@ -81,7 +81,7 @@ namespace RPGCharacterAnims
 
 		private void Attacks()
 		{
-			// Check if Attack Action exists.
+			// CheckVertical if Attack Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.Attack)) { return; }
 
 			// End special attack.
@@ -108,13 +108,13 @@ namespace RPGCharacterAnims
 
 		private void Damage()
         {
-			// Check if Get Hit Action exists.
+			// CheckVertical if Get Hit Action exists.
 			if (rpgCharacterController.HandlerExists(HandlerTypes.GetHit)
 				&& rpgCharacterController.CanStartAction(HandlerTypes.GetHit)) {
 					if (GUI.Button(new Rect(30, 240, 100, 30), "Get Hit"))
 					{ rpgCharacterController.StartAction(HandlerTypes.GetHit, new HitContext()); }
 			}
-			// Check if Knockback Action exists.
+			// CheckVertical if Knockback Action exists.
 			if (rpgCharacterController.HandlerExists(HandlerTypes.Knockback)
 				&& rpgCharacterController.CanStartAction(HandlerTypes.Knockback)) {
 					if (GUI.Button(new Rect(130, 240, 100, 30), "Knockback1"))
@@ -122,7 +122,7 @@ namespace RPGCharacterAnims
 					if (GUI.Button(new Rect(230, 240, 100, 30), "Knockback2"))
 					{ rpgCharacterController.StartAction(HandlerTypes.Knockback, new HitContext((int)KnockbackType.Knockback2, Vector3.back)); }
 			}
-			// Check if Knockdown Action exists.
+			// CheckVertical if Knockdown Action exists.
 			if (rpgCharacterController.HandlerExists(HandlerTypes.Knockdown)
 				&& rpgCharacterController.CanStartAction(HandlerTypes.Knockdown)) {
 					if (GUI.Button(new Rect(130, 270, 100, 30), "Knockdown"))
@@ -132,7 +132,7 @@ namespace RPGCharacterAnims
 
 		private void DiveRoll()
 		{
-			// Check if DiveRoll Action exists.
+			// CheckVertical if DiveRoll Action exists.
 			if (rpgCharacterController.HandlerExists(HandlerTypes.DiveRoll)) {
 				if (rpgCharacterController.CanStartAction(HandlerTypes.DiveRoll)) {
 					if (GUI.Button(new Rect(445, 75, 100, 30), "Dive Roll"))
@@ -143,7 +143,7 @@ namespace RPGCharacterAnims
 
         private void Jumping()
         {
-			// Check if Jump Action exists.
+			// CheckVertical if Jump Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.Jump)) { return; }
 
 			if (rpgCharacterController.CanStartAction(HandlerTypes.Jump)) {
@@ -170,7 +170,7 @@ namespace RPGCharacterAnims
 
         private void WeaponSwitching()
 		{
-			// Check if SwitchWeapon Action exists.
+			// CheckVertical if SwitchWeapon Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.SwitchWeapon)) { return; }
 
 			var doSwitch = false;

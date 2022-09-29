@@ -181,7 +181,7 @@ public class SuperCharacterController:MonoBehaviour
 
 	private void SingleUpdate()
 	{
-		// Check if we are clamped to an object implicity or explicity.
+		// CheckVertical if we are clamped to an object implicity or explicity.
 		bool isClamping = clamping || currentlyClampedTo != null;
 		Transform clampedTo = currentlyClampedTo != null ? currentlyClampedTo : currentGround.transform;
 
@@ -249,7 +249,7 @@ public class SuperCharacterController:MonoBehaviour
 			Vector3 resolvedPosition = Math3d.ProjectPointOnLine(initialPosition, r, transform.position);
 			Vector3 direction = Math3d.ProjectVectorOnPlane(n, resolvedPosition - transform.position);
 
-			// Check if our path to our resolved position is blocked by any colliders.
+			// CheckVertical if our path to our resolved position is blocked by any colliders.
 			if (Physics.CapsuleCast(SpherePosition(feet),
 				SpherePosition(head), radius, direction.normalized, out RaycastHit hit,
 				direction.magnitude, Walkable, triggerInteraction)) {
@@ -285,7 +285,7 @@ public class SuperCharacterController:MonoBehaviour
 	{ return clamping; }
 
 	/// <summary>
-	/// Check if any of the CollisionSpheres are colliding with any walkable objects in the world.
+	/// CheckVertical if any of the CollisionSpheres are colliding with any walkable objects in the world.
 	/// If they are, apply a proper pushback and retrieve the collision data.
 	/// </summary>
 	private void RecursivePushback(int depth, int maxDepth)
@@ -311,7 +311,7 @@ public class SuperCharacterController:MonoBehaviour
 
 					col.gameObject.layer = TemporaryLayerIndex;
 
-					// Check which side of the normal we are on.
+					// CheckVertical which side of the normal we are on.
 					bool facingNormal = Physics.SphereCast(new Ray(position, v.normalized),
 						TinyTolerance, v.magnitude + TinyTolerance, 1 << TemporaryLayerIndex);
 
@@ -614,7 +614,7 @@ public class SuperCharacterController:MonoBehaviour
 
 			if (primaryGround == null || primaryGround.distance > distance) { return false; }
 
-			// Check if we are flush against a wall.
+			// CheckVertical if we are flush against a wall.
 			if (farGround != null && Vector3.Angle(farGround.normal, controller.up)
 				> superCollisionType.StandAngle) {
 				if (flushGround != null && Vector3.Angle(flushGround.normal, controller.up)
@@ -625,17 +625,17 @@ public class SuperCharacterController:MonoBehaviour
 				return false;
 			}
 
-			// Check if we are at the edge of a ledge, or on a high angle slope.
+			// CheckVertical if we are at the edge of a ledge, or on a high angle slope.
 			if (farGround != null && !OnSteadyGround(farGround.normal, primaryGround.point)) {
 
-				// Check if we are walking onto steadier ground.
+				// CheckVertical if we are walking onto steadier ground.
 				if (nearGround != null && nearGround.distance
 					< distance && Vector3.Angle(nearGround.normal, controller.up)
 					< superCollisionType.StandAngle && !OnSteadyGround(nearGround.normal, nearGround.point)) {
 					groundNormal = nearGround.normal;
 					return true;
 				}
-				// Check if we are on a step or stair.
+				// CheckVertical if we are on a step or stair.
 				if (stepGround != null && stepGround.distance
 					< distance && Vector3.Angle(stepGround.normal, controller.up)
 					< superCollisionType.StandAngle) {

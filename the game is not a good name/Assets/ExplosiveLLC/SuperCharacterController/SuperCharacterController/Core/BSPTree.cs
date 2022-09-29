@@ -250,7 +250,7 @@ public class BSPTree:MonoBehaviour
 		// Source: Real-Time Collision Detection by Christer Ericson
 		// Reference: Page 136
 
-		//Check if P in vertex region outside A.
+		//CheckVertical if P in vertex region outside A.
 		Vector3 ab = vertex2 - vertex1;
 		Vector3 ac = vertex3 - vertex1;
 		Vector3 ap = point - vertex1;
@@ -264,7 +264,7 @@ public class BSPTree:MonoBehaviour
 			return;
 		}
 
-		// Check if P in vertex region outside B.
+		// CheckVertical if P in vertex region outside B.
 		Vector3 bp = point - vertex2;
 		float d3 = Vector3.Dot(ab, bp);
 		float d4 = Vector3.Dot(ac, bp);
@@ -275,7 +275,7 @@ public class BSPTree:MonoBehaviour
 			return;
 		}
 
-		// Check if P in edge region of AB, if so return projection of P onto AB.
+		// CheckVertical if P in edge region of AB, if so return projection of P onto AB.
 		float vc = d1 * d4 - d3 * d2;
 		if (vc <= 0.0f && d1 >= 0.0f && d3 <= 0.0f) {
 			float v = d1 / (d1 - d3);
@@ -285,7 +285,7 @@ public class BSPTree:MonoBehaviour
 			return;
 		}
 
-		// Check if P in vertex region outside C.
+		// CheckVertical if P in vertex region outside C.
 		Vector3 cp = point - vertex3;
 		float d5 = Vector3.Dot(ab, cp);
 		float d6 = Vector3.Dot(ac, cp);
@@ -296,7 +296,7 @@ public class BSPTree:MonoBehaviour
 			return;
 		}
 
-		// Check if P in edge region of AC, if so return projection of P onto AC.
+		// CheckVertical if P in edge region of AC, if so return projection of P onto AC.
 		float vb = d5 * d2 - d1 * d6;
 		if (vb <= 0.0f && d2 >= 0.0f && d6 <= 0.0f) {
 			float w = d2 / (d2 - d6);
@@ -306,7 +306,7 @@ public class BSPTree:MonoBehaviour
 			return;
 		}
 
-		// Check if P in edge region of BC, if so return projection of P onto BC.
+		// CheckVertical if P in edge region of BC, if so return projection of P onto BC.
 		float va = d3 * d6 - d5 * d4;
 		if (va <= 0.0f && (d4 - d3) >= 0.0f && (d5 - d6) >= 0.0f) {
 			float w = (d4 - d3) / ((d4 - d3) + (d5 - d6));

@@ -156,7 +156,7 @@ namespace RPGCharacterAnims
 
         private void Strafing()
         {
-			// Check to make sure Strafe Action exists.
+			// CheckVertical to make sure Strafe Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.Strafe) || !rpgCharacterController.canStrafe) { return; }
 
 			if (inputAimBlock < -0.1f || inputAiming) { rpgCharacterController.TryStartAction(HandlerTypes.Strafe); }
@@ -165,7 +165,7 @@ namespace RPGCharacterAnims
 
         private void Facing()
         {
-			// Check to make sure Face Action exists.
+			// CheckVertical to make sure Face Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.Face)) { return; }
 			if (!rpgCharacterController.canFace) { return; }
 
@@ -191,10 +191,10 @@ namespace RPGCharacterAnims
 
         private void Attacking()
         {
-			// Check to make sure Attack Action exists.
+			// CheckVertical to make sure Attack Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.Attack)) { return; }
 
-			// Check to make character can Attack.
+			// CheckVertical to make character can Attack.
 			if (!rpgCharacterController.CanStartAction(HandlerTypes.Attack)) { return; }
 
             if (inputAttackL)
@@ -224,7 +224,7 @@ namespace RPGCharacterAnims
 		/// </summary>
 		private void SwitchWeapons()
 		{
-			// Check to make sure SwitchWeapon Action exists.
+			// CheckVertical to make sure SwitchWeapon Action exists.
 			if (!rpgCharacterController.HandlerExists(HandlerTypes.SwitchWeapon)) { return; }
 
 			// Bail out if we can't switch weapons.

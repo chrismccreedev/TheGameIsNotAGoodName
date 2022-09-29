@@ -32,7 +32,7 @@ namespace RPGCharacterAnims
 
         void Start()
         {
-            // Check if Animator exists, otherwise pause script.
+            // CheckVertical if Animator exists, otherwise pause script.
             animator = rpgCharacterController.animator;
             if (animator != null) { return; }
             Debug.LogError("No Animator component found!");

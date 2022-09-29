@@ -8,8 +8,6 @@ namespace PlayerTransform
     public class PlayerTransform : MonoBehaviour
     {
         [SerializeField] private GameObject _camera;
-        [SerializeField] private JoystickManager _joystickManager;
-        [SerializeField] private CameraRotation _cameraRotation;
         [SerializeField] private float _speed;
         [SerializeField] private float _reversalSize;
 
@@ -18,6 +16,8 @@ namespace PlayerTransform
 
         private PlayerAnumatorController _animatorController;
         private CharacterController _characterController;
+        private JoystickManager _joystickManager;
+        private CameraRotation _cameraRotation;
         private float _rotationValue;
 
         private Vector3 _direction;
@@ -25,6 +25,8 @@ namespace PlayerTransform
 
         private void Start()
         {
+            _joystickManager = FindObjectOfType<JoystickManager>();
+            _cameraRotation = FindObjectOfType<CameraRotation>();
             _characterController = GetComponentInParent<CharacterController>();
             _animatorController = GetComponent<PlayerAnumatorController>();
             _joystickManager.Move += Move;

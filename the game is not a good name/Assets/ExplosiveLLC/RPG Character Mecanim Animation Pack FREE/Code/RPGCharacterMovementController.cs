@@ -152,7 +152,7 @@ namespace RPGCharacterAnims
             // Get other RPG Character components.
             superCharacterController = GetComponent<SuperCharacterController>();
 
-            // Check if Animator exists, otherwise pause script.
+            // CheckVertical if Animator exists, otherwise pause script.
             animator = GetComponentInChildren<Animator>();
 			if (!animator) {
 				Debug.LogError("ERROR: THERE IS NO ANIMATOR COMPONENT ON CHILD OF CHARACTER.");
@@ -254,7 +254,7 @@ namespace RPGCharacterAnims
         // Run every frame character is in the idle state.
         private void Idle_SuperUpdate()
         {
-			// Check if the character starts falling.
+			// CheckVertical if the character starts falling.
 			if (rpgCharacterController.TryStartAction(HandlerTypes.Fall)) { return; }
 
 			// Apply friction to slow to a halt.
@@ -265,7 +265,7 @@ namespace RPGCharacterAnims
         // Run every frame character is moving.
         private void Move_SuperUpdate()
         {
-			// Check if the character starts falling.
+			// CheckVertical if the character starts falling.
 			if (rpgCharacterController.TryStartAction(HandlerTypes.Fall)) { return; }
 
             // Set speed determined by movement type.

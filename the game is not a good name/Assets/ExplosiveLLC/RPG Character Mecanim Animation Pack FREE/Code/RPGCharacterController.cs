@@ -267,7 +267,7 @@ namespace RPGCharacterAnims
         }
 
         /// <summary>
-        /// Check if a handler exists.
+        /// CheckVertical if a handler exists.
         /// </summary>
         /// <param name="action">Name of the action.</param>
         /// <returns>Whether or not that action exists on this controller.</returns>
@@ -278,7 +278,7 @@ namespace RPGCharacterAnims
 		{ return HandlerExists(action) && IsActive(action); }
 
         /// <summary>
-        /// Check if an action is active.
+        /// CheckVertical if an action is active.
         /// </summary>
         /// <param name="action">Name of the action.</param>
         /// <returns>Whether the action is active. If the action does not exist, returns false.</returns>
@@ -286,7 +286,7 @@ namespace RPGCharacterAnims
         { return GetHandler(action).IsActive(); }
 
         /// <summary>
-        /// Check if an action can be started.
+        /// CheckVertical if an action can be started.
         /// </summary>
         /// <param name="action">Name of the action.</param>
         /// <returns>Whether the action can be started. If the action does not exist, returns false.</returns>
@@ -311,7 +311,7 @@ namespace RPGCharacterAnims
         }
 
         /// <summary>
-        /// Check if an action can be ended.
+        /// CheckVertical if an action can be ended.
         /// </summary>
         /// <param name="action">Name of the action.</param>
         /// <returns>Whether the action can be ended. If the action does not exist, returns false.</returns>
